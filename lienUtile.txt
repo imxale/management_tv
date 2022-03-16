@@ -1,0 +1,3 @@
+https://symfony.com/doc/5.4/page_creation.html
+https://symfony.com/doc/current/security.html#the-firewall
+https://www.bg-coding.fr/fr/developpement/frameworks/symfony/creer-et-modifier-des-entites-sur-symfony#:~:text=Pour%20modifier%20vos%20entit%C3%A9s%2C%20vous,fichiers%20PHP%20de%20vos%20classes.
