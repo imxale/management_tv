@@ -34,6 +34,12 @@ class Role
         $this->users = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        // TODO: Implement __toString() method.
+        return $this->libelle;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

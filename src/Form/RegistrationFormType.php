@@ -2,9 +2,16 @@
 
 namespace App\Form;
 
+use App\Entity\Role;
 use App\Entity\User;
+use Doctrine\DBAL\Types\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -26,6 +33,12 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            /*->add('roles'/*, ChoiceType::class, [
+                    'choices' => [
+                        'Admin' => 'ROLE_ADMIN',
+                        'Équipier Production' => 'ROLE_USER'
+                    ]
+            ])*/
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
