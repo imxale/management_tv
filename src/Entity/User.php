@@ -37,12 +37,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $password;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=Role::class, inversedBy="users")
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $id_role;
-
     public function __construct()
     {
         $this->roles = array('ROLE_USER');
@@ -130,17 +124,5 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
-    }
-
-    public function getIdRole(): ?Role
-    {
-        return $this->id_role;
-    }
-
-    public function setIdRole(?Role $id_role): self
-    {
-        $this->id_role = $id_role;
-
-        return $this;
     }
 }
