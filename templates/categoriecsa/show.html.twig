@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categoriecsa{% endblock %}
+
+{% block body %}
+    <h1>Categoriecsa</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ categoriecsa.id }}</td>
+            </tr>
+            <tr>
+                <th>Libelle</th>
+                <td>{{ categoriecsa.libelle }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_categoriecsa_index') }}">back to list</a>
+
+    <a href="{{ path('app_categoriecsa_edit', {'id': categoriecsa.id}) }}">edit</a>
+
+    {{ include('categoriecsa/_delete_form.html.twig') }}
+{% endblock %}

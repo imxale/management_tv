@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Categoriecsa{% endblock %}
+
+{% block body %}
+    <h1>Create new Categoriecsa</h1>
+
+    {{ include('categoriecsa/_form.html.twig') }}
+
+    <a href="{{ path('app_categoriecsa_index') }}">back to list</a>
+{% endblock %}
