@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Emission{% endblock %}
+
+{% block body %}
+    <h1>Emission</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ emission.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ emission.titre }}</td>
+            </tr>
+            <tr>
+                <th>Titreoriginal</th>
+                <td>{{ emission.titreoriginal }}</td>
+            </tr>
+            <tr>
+                <th>Anneproduction</th>
+                <td>{{ emission.anneproduction ? emission.anneproduction|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Numsaison</th>
+                <td>{{ emission.numsaison }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_emission_index') }}">back to list</a>
+
+    <a href="{{ path('app_emission_edit', {'id': emission.id}) }}">edit</a>
+
+    {{ include('emission/_delete_form.html.twig') }}
+{% endblock %}

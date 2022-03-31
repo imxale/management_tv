@@ -28,7 +28,7 @@ class CategoriecsaController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/new", name="app_categoriecsa_new", methods={"GET", "POST"})
      */
     public function new(Request $request, CategoriecsaRepository $categoriecsaRepository): Response
@@ -60,7 +60,7 @@ class CategoriecsaController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}/edit", name="app_categoriecsa_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Categoriecsa $categoriecsa, CategoriecsaRepository $categoriecsaRepository): Response
@@ -80,7 +80,7 @@ class CategoriecsaController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}", name="app_categoriecsa_delete", methods={"POST"})
      */
     public function delete(Request $request, Categoriecsa $categoriecsa, CategoriecsaRepository $categoriecsaRepository): Response

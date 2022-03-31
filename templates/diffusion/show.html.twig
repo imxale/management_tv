@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Diffusion{% endblock %}
+
+{% block body %}
+    <h1>Diffusion</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ diffusion.id }}</td>
+            </tr>
+            <tr>
+                <th>Lejour</th>
+                <td>{{ diffusion.lejour ? diffusion.lejour|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Horaire</th>
+                <td>{{ diffusion.horaire ? diffusion.horaire|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Direct</th>
+                <td>{{ diffusion.direct ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_diffusion_index') }}">back to list</a>
+
+    <a href="{{ path('app_diffusion_edit', {'id': diffusion.id}) }}">edit</a>
+
+    {{ include('diffusion/_delete_form.html.twig') }}
+{% endblock %}

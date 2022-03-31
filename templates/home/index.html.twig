@@ -25,7 +25,12 @@
             <ul>
                 <li><a href="{{ path('app_genre_index') }}">Genre</a></li>
                 <li><a href="{{ path('app_categoriecsa_index') }}">Categorie CSA</a></li>
+                <li><a href="{{ path('app_diffusion_index') }}">Diffusion</a></li>
+                <li><a href="{{ path('app_emission_index') }}">Emission</a></li>
+                <li><a href="{{ path('app_programme_index') }}">Programme</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
                 <li><a href="{{ path('app_user_index') }}">User</a></li>
+                {% endif %}
             </ul>
         </div>
     {% endif %}

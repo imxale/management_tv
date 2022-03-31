@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Emission index{% endblock %}
+
+{% block body %}
+    <h1>Emission index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Titreoriginal</th>
+                <th>Anneproduction</th>
+                <th>Numsaison</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for emission in emissions %}
+            <tr>
+                <td>{{ emission.id }}</td>
+                <td>{{ emission.titre }}</td>
+                <td>{{ emission.titreoriginal }}</td>
+                <td>{{ emission.anneproduction ? emission.anneproduction|date('Y-m-d') : '' }}</td>
+                <td>{{ emission.numsaison }}</td>
+                <td>
+                    <a href="{{ path('app_emission_show', {'id': emission.id}) }}">show</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('app_emission_edit', {'id': emission.id}) }}">edit</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('app_emission_new') }}">Create new</a>
+    {% endif %}
+{% endblock %}

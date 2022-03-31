@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Diffusion index{% endblock %}
+
+{% block body %}
+    <h1>Diffusion index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Lejour</th>
+                <th>Horaire</th>
+                <th>Direct</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for diffusion in diffusions %}
+            <tr>
+                <td>{{ diffusion.id }}</td>
+                <td>{{ diffusion.lejour ? diffusion.lejour|date('Y-m-d') : '' }}</td>
+                <td>{{ diffusion.horaire ? diffusion.horaire|date('H:i:s') : '' }}</td>
+                <td>{{ diffusion.direct ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_diffusion_show', {'id': diffusion.id}) }}">show</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('app_diffusion_edit', {'id': diffusion.id}) }}">edit</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('app_diffusion_new') }}">Create new</a>
+    {% endif %}
+{% endblock %}

@@ -20,7 +20,9 @@
                 <td>{{ categoriecsa.libelle }}</td>
                 <td>
                     <a href="{{ path('app_categoriecsa_show', {'id': categoriecsa.id}) }}">show</a>
+                    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_EDITOR') %}
                     <a href="{{ path('app_categoriecsa_edit', {'id': categoriecsa.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -30,6 +32,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+    {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_EDITOR') %}
     <a href="{{ path('app_categoriecsa_new') }}">Create new</a>
+    {% endif %}
 {% endblock %}

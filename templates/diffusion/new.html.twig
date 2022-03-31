@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Diffusion{% endblock %}
+
+{% block body %}
+    <h1>Create new Diffusion</h1>
+
+    {{ include('diffusion/_form.html.twig') }}
+
+    <a href="{{ path('app_diffusion_index') }}">back to list</a>
+{% endblock %}
