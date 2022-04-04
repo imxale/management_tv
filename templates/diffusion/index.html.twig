@@ -24,7 +24,7 @@
                 <td>{{ diffusion.direct ? 'Yes' : 'No' }}</td>
                 <td>
                     <a href="{{ path('app_diffusion_show', {'id': diffusion.id}) }}">show</a>
-                    {% if is_granted('ROLE_ADMIN') %}
+                    {% if is_granted('ROLE_EDITOR') %}
                     <a href="{{ path('app_diffusion_edit', {'id': diffusion.id}) }}">edit</a>
                     {% endif %}
                 </td>
@@ -36,7 +36,7 @@
         {% endfor %}
         </tbody>
     </table>
-    {% if is_granted('ROLE_ADMIN') %}
+    {% if is_granted('ROLE_EDITOR') %}
     <a href="{{ path('app_diffusion_new') }}">Create new</a>
     {% endif %}
 {% endblock %}

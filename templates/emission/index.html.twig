@@ -26,7 +26,7 @@
                 <td>{{ emission.numsaison }}</td>
                 <td>
                     <a href="{{ path('app_emission_show', {'id': emission.id}) }}">show</a>
-                    {% if is_granted('ROLE_ADMIN') %}
+                    {% if is_granted('ROLE_EDITOR') %}
                     <a href="{{ path('app_emission_edit', {'id': emission.id}) }}">edit</a>
                     {% endif %}
                 </td>
@@ -38,7 +38,7 @@
         {% endfor %}
         </tbody>
     </table>
-    {% if is_granted('ROLE_ADMIN') %}
+    {% if is_granted('ROLE_EDITOR') %}
     <a href="{{ path('app_emission_new') }}">Create new</a>
     {% endif %}
 {% endblock %}

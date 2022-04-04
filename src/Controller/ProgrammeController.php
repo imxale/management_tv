@@ -28,7 +28,7 @@ class ProgrammeController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/new", name="app_programme_new", methods={"GET", "POST"})
      */
     public function new(Request $request, ProgrammeRepository $programmeRepository): Response
@@ -60,7 +60,7 @@ class ProgrammeController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}/edit", name="app_programme_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Programme $programme, ProgrammeRepository $programmeRepository): Response
@@ -80,7 +80,7 @@ class ProgrammeController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}", name="app_programme_delete", methods={"POST"})
      */
     public function delete(Request $request, Programme $programme, ProgrammeRepository $programmeRepository): Response

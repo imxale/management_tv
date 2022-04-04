@@ -20,7 +20,7 @@
                 <td>{{ genre.libelle }}</td>
                 <td>
                     <a href="{{ path('app_genre_show', {'id': genre.id}) }}">show</a>
-                    {% if is_granted('ROLE_ADMIN') %}
+                    {% if is_granted('ROLE_EDITOR') %}
                     <a href="{{ path('app_genre_edit', {'id': genre.id}) }}">edit</a>
                     {% endif %}
                 </td>
@@ -32,7 +32,7 @@
         {% endfor %}
         </tbody>
     </table>
-    {% if is_granted('ROLE_ADMIN') %}
+    {% if is_granted('ROLE_EDITOR') %}
     <a href="{{ path('app_genre_new') }}">Create new</a>
     {% endif %}
 {% endblock %}

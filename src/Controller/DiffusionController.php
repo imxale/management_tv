@@ -28,7 +28,7 @@ class DiffusionController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/new", name="app_diffusion_new", methods={"GET", "POST"})
      */
     public function new(Request $request, DiffusionRepository $diffusionRepository): Response
@@ -60,7 +60,7 @@ class DiffusionController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}/edit", name="app_diffusion_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Diffusion $diffusion, DiffusionRepository $diffusionRepository): Response
@@ -80,7 +80,7 @@ class DiffusionController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}", name="app_diffusion_delete", methods={"POST"})
      */
     public function delete(Request $request, Diffusion $diffusion, DiffusionRepository $diffusionRepository): Response

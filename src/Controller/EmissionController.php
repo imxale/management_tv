@@ -28,7 +28,7 @@ class EmissionController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/new", name="app_emission_new", methods={"GET", "POST"})
      */
     public function new(Request $request, EmissionRepository $emissionRepository): Response
@@ -60,7 +60,7 @@ class EmissionController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}/edit", name="app_emission_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, Emission $emission, EmissionRepository $emissionRepository): Response
@@ -80,7 +80,7 @@ class EmissionController extends AbstractController
     }
 
     /**
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}", name="app_emission_delete", methods={"POST"})
      */
     public function delete(Request $request, Emission $emission, EmissionRepository $emissionRepository): Response

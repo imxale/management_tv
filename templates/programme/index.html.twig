@@ -22,7 +22,7 @@
                 <td>{{ programme.duree }}</td>
                 <td>
                     <a href="{{ path('app_programme_show', {'id': programme.id}) }}">show</a>
-                    {% if is_granted('ROLE_ADMIN') %}
+                    {% if is_granted('ROLE_EDITOR') %}
                     <a href="{{ path('app_programme_edit', {'id': programme.id}) }}">edit</a>
                     {% endif %}
                 </td>
@@ -34,7 +34,7 @@
         {% endfor %}
         </tbody>
     </table>
-    {% if is_granted('ROLE_ADMIN') %}
+    {% if is_granted('ROLE_EDITOR') %}
     <a href="{{ path('app_programme_new') }}">Create new</a>
     {% endif %}
 {% endblock %}
