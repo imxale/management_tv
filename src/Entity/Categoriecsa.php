@@ -34,6 +34,12 @@ class Categoriecsa
         $this->programmes = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return $this->libelle;
+        // TODO: Implement __toString() method.
+    }
+
     public function getId(): ?int
     {
         return $this->id;

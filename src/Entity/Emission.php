@@ -48,7 +48,7 @@ class Emission
      * @ORM\ManyToOne(targetEntity=Genre::class, inversedBy="emissions")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $id_genre;
+    private $genre;
 
     public function __construct()
     {
@@ -140,12 +140,12 @@ class Emission
 
     public function getIdGenre(): ?Genre
     {
-        return $this->id_genre;
+        return $this->genre;
     }
 
-    public function setIdGenre(?Genre $id_genre): self
+    public function setIdGenre(?Genre $genre): self
     {
-        $this->id_genre = $id_genre;
+        $this->genre = $genre;
 
         return $this;
     }

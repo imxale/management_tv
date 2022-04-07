@@ -19,6 +19,7 @@ class GenreRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Genre::class);
+      //  dd($this);
     }
 
     /**
@@ -28,6 +29,7 @@ class GenreRepository extends ServiceEntityRepository
     public function add(Genre $entity, bool $flush = true): void
     {
         $this->_em->persist($entity);
+        //dd($this->_em);
         if ($flush) {
             $this->_em->flush();
         }

@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
-
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @Route("/genre")
@@ -32,14 +32,20 @@ class GenreController extends AbstractController
      * @IsGranted("ROLE_EDITOR")
      * @Route("/new", name="app_genre_new", methods={"GET", "POST"})
      */
-    public function new(Request $request, GenreRepository $genreRepository): Response
+    public function new(Request $request, GenreRepository $genreRepository, ManagerRegistry $doctrine): Response
     {
         $genre = new Genre();
         $form = $this->createForm(GenreType::class, $genre);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
+         //   $entityManager = $doctrine->getManager();
+        //    $entityManager->persist($genre);
+
+            // actually executes the queries (i.e. the INSERT query)
+       //     dd($genre);
+         //   $entityManager->flush();
             $genreRepository->add($genre);
+
             return $this->redirectToRoute('app_genre_index', [], Response::HTTP_SEE_OTHER);
         }
 
