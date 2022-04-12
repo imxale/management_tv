@@ -34,6 +34,12 @@ class Genre
         $this->emissions = new ArrayCollection();
     }
 
+    public function __toString(): string
+    {
+        // TODO: Implement __toString() method.
+        return $this->libelle;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
