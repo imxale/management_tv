@@ -12,11 +12,11 @@
     <h1>Hello {{ controller_name }}! ✅</h1>
     {% if app.user %}
         <div class="mb-3">
-            Tu es connecté en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
+            {{ 'You are logged in as' |trans }} {{ app.user.username }}, <a href="{{ path('app_logout') }}">{{ 'Logout' |trans }}</a>
         </div>
     {% else %}
         <div class="mb-3">
-            Tu n'es pas connecté, connecte toi ou créé un compte <a href="{{ path('app_login') }}">Connexion</a> <a href="{{ path('app_register') }}">Création de compte</a>
+            {{ 'You are not logged in, log in or create an account' |trans}}, <a href="{{ path('app_login') }}">{{ 'Login'|trans }}</a> <a href="{{ path('app_register') }}">{{'Create an account' |trans}}</a>
         </div>
     {% endif %}
 
@@ -34,8 +34,6 @@
             </ul>
         </div>
     {% endif %}
-
-
     <!--<ul>
         <li>Your controller at <code><a href="{#{ 'C:/BLANCHARD/cuisinermoi/src/Controller/HomeController.php'|file_link(0) }#}">src/Controller/HomeController.php</a></code></li>
         <li>Your template at <code><a href="{#{ 'C:/BLANCHARD/cuisinermoi/templates/home/index.html.twig'|file_link(0) }#}">templates/home/index.html.twig</a></code></li>
