@@ -8,10 +8,10 @@
 
     </head>
     <body>
+    {% if app.user %}
+        {{ 'Back to the ' |trans}} <a href="{{ path('app_home') }}"> {{"homepage" |trans}}</a>
+    {% endif %}
         {% block body %}
-            {% if app.user %}
-            Retour le page <a href="{{ path('app_home') }}">d'accueil</a>
-            {% endif %}
         {% endblock %}
     </body>
 </html>
