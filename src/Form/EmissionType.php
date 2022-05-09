@@ -41,7 +41,7 @@ class EmissionType extends AbstractType
                 'choice_label' => 'libelle',
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Veuillez choisir une ville'
+                        'message' => 'Veuillez choisir un genre'
                     ])
                 ]
             ])
