@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/categoriecsa")
+ * @Route("/{_locale}/categoriecsa")
  */
 class CategoriecsaController extends AbstractController
 {

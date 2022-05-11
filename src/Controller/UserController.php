@@ -14,7 +14,7 @@ use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface
 
 
 /**
- * @Route("/admin/user")
+ * @Route("/{_locale}/admin/user")
  */
 class UserController extends AbstractController
 {

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Management TV{% endblock %}
 
 {% block body %}
 <style>
@@ -9,7 +9,7 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>{{ 'Management of your TV channel' |trans }}</h1>
     {% if app.user %}
         <div class="mb-3">
             {{ 'You are logged in as' |trans }} {{ app.user.username }}, <a href="{{ path('app_logout') }}">{{ 'Logout' |trans }}</a>

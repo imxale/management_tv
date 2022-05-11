@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/emission")
+ * @Route("/{_locale}/emission")
  */
 class EmissionController extends AbstractController
 {

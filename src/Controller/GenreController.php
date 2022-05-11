@@ -13,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @Route("/genre")
+ * @Route("/{_locale}/genre")
  */
 class GenreController extends AbstractController
 {

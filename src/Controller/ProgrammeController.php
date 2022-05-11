@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/programme")
+ * @Route("/{_locale}/programme")
  */
 class ProgrammeController extends AbstractController
 {

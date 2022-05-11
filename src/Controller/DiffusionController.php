@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
- * @Route("/diffusion")
+ * @Route("/{_locale}/diffusion")
  */
 class DiffusionController extends AbstractController
 {

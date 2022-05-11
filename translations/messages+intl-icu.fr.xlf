@@ -25,13 +25,21 @@
         <source>Create an account</source>
         <target>Création de compte</target>
       </trans-unit>
-      <trans-unit id="..tdgiC" resname="Back to the ">
+      <trans-unit id="kn0pQmN" resname="Back to the ">
         <source>Back to the </source>
         <target>Retour à la page </target>
       </trans-unit>
-      <trans-unit id="_PVyzd8" resname="homepage">
+      <trans-unit id="pcWhXux" resname="homepage">
         <source>homepage</source>
         <target>d'accueil</target>
+      </trans-unit>
+      <trans-unit id="Nm9bupo" resname="Back to the">
+        <source>Back to the</source>
+        <target>__Back to the</target>
+      </trans-unit>
+      <trans-unit id="l97WF_E" resname="Management of your TV channel">
+        <source>Management of your TV channel</source>
+        <target>Gestion de votre chaine TV</target>
       </trans-unit>
     </body>
   </file>
