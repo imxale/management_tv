@@ -1,7 +1,7 @@
 
 # Management TV
 
-Ce projet est un site de gestion d'une chaîne de télévision.
+Ce projet est un site de gestion d'une chaîne de télévision.\
 On peut y ajouter des genres différents d'émission, ajouter des programmes, y lier des diffusions, etc...
 
 
