@@ -17,6 +17,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class CategoriecsaController extends AbstractController
 {
     /**
+     * Lister les categoriesCSA
      * @IsGranted("ROLE_USER")
      * @Route("/", name="app_categoriecsa_index", methods={"GET"})
      */
@@ -28,6 +29,7 @@ class CategoriecsaController extends AbstractController
     }
 
     /**
+     * Ajouter une categorieCSA
      * @IsGranted("ROLE_EDITOR")
      * @Route("/new", name="app_categoriecsa_new", methods={"GET", "POST"})
      */
@@ -49,6 +51,7 @@ class CategoriecsaController extends AbstractController
     }
 
     /**
+     * Afficher une categorieCSA
      * @IsGranted("ROLE_USER")
      * @Route("/{id}", name="app_categoriecsa_show", methods={"GET"})
      */
@@ -60,6 +63,7 @@ class CategoriecsaController extends AbstractController
     }
 
     /**
+     * Modifier une categorieCSA
      * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}/edit", name="app_categoriecsa_edit", methods={"GET", "POST"})
      */
@@ -80,6 +84,7 @@ class CategoriecsaController extends AbstractController
     }
 
     /**
+     * Supprimer une categorieCSA
      * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}", name="app_categoriecsa_delete", methods={"POST"})
      */

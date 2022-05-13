@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
+     * Afficher le menu
      * @Route("/{_locale}/home", name="app_home")
      */
     public function index(): Response

@@ -19,16 +19,9 @@ use Symfony\Component\Security\Core\Authorization\AccessDecisionManagerInterface
 class UserController extends AbstractController
 {
     /**
+     * Lister les comptes
      * @Route("/", name="app_user_index", methods={"GET"})
      */
-    /*public function view(AccessDecisionManagerInterface $accessDecisionManager, User $user): Response
-    {
-        $token = new UsernamePasswordToken($user, 'none', 'none', $user->getRoles());
-        if ($accessDecisionManager->decide($token, 'ROLE_ADMIN')) {
-            // L'utilisateur $user a le rôle ROLE_ADMIN
-        }
-    }*/
-
     public function index(UserRepository $userRepository): Response
     {
         return $this->render('user/index.html.twig', [
@@ -37,6 +30,7 @@ class UserController extends AbstractController
     }
 /*
     /**
+     * Ajouter un compte depuis la page Admin
      * @Route("/new", name="app_user_new", methods={"GET", "POST"})
 
     public function new(Request $request, UserRepository $userRepository): Response
@@ -57,6 +51,7 @@ class UserController extends AbstractController
     }*/
 
     /**
+     * Afficher un compte
      * @Route("/{id}", name="app_user_show", methods={"GET"})
      */
     public function show(User $user): Response
@@ -67,6 +62,7 @@ class UserController extends AbstractController
     }
 
     /**
+     * Modifier un compte
      * @Route("/{id}/edit", name="app_user_edit", methods={"GET", "POST"})
      */
     public function edit(Request $request, User $user, UserRepository $userRepository): Response
@@ -86,6 +82,7 @@ class UserController extends AbstractController
     }
 
     /**
+     * Supprimer un compte
      * @Route("/{id}", name="app_user_delete", methods={"POST"})
      */
     public function delete(Request $request, User $user, UserRepository $userRepository): Response

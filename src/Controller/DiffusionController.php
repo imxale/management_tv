@@ -17,6 +17,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class DiffusionController extends AbstractController
 {
     /**
+     * Lister les diffusions
      * @IsGranted("ROLE_USER")
      * @Route("/", name="app_diffusion_index", methods={"GET"})
      */
@@ -28,6 +29,7 @@ class DiffusionController extends AbstractController
     }
 
     /**
+     * Ajouter une diffusion
      * @IsGranted("ROLE_EDITOR")
      * @Route("/new", name="app_diffusion_new", methods={"GET", "POST"})
      */
@@ -49,6 +51,7 @@ class DiffusionController extends AbstractController
     }
 
     /**
+     * Afficher une diffusion
      * @IsGranted("ROLE_USER")
      * @Route("/{id}", name="app_diffusion_show", methods={"GET"})
      */
@@ -60,6 +63,7 @@ class DiffusionController extends AbstractController
     }
 
     /**
+     * Modifier une diffusion
      * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}/edit", name="app_diffusion_edit", methods={"GET", "POST"})
      */
@@ -80,6 +84,7 @@ class DiffusionController extends AbstractController
     }
 
     /**
+     * Supprimer une diffusion
      * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}", name="app_diffusion_delete", methods={"POST"})
      */

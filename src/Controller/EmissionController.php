@@ -17,6 +17,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class EmissionController extends AbstractController
 {
     /**
+     * Lister les emissions
      * @IsGranted("ROLE_USER")
      * @Route("/", name="app_emission_index", methods={"GET"})
      */
@@ -28,6 +29,7 @@ class EmissionController extends AbstractController
     }
 
     /**
+     * Ajouter une emission
      * @IsGranted("ROLE_EDITOR")
      * @Route("/new", name="app_emission_new", methods={"GET", "POST"})
      */
@@ -49,6 +51,7 @@ class EmissionController extends AbstractController
     }
 
     /**
+     * Afficher une emission
      * @IsGranted("ROLE_USER")
      * @Route("/{id}", name="app_emission_show", methods={"GET"})
      */
@@ -60,6 +63,7 @@ class EmissionController extends AbstractController
     }
 
     /**
+     * Modifier une emission
      * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}/edit", name="app_emission_edit", methods={"GET", "POST"})
      */
@@ -80,6 +84,7 @@ class EmissionController extends AbstractController
     }
 
     /**
+     * Supprimer une emission
      * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}", name="app_emission_delete", methods={"POST"})
      */

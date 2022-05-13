@@ -10,6 +10,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class LoginController extends AbstractController
 {
     /**
+     * Afficher le formulaire de login
      * @Route("/{_locale}/login", name="app_login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
@@ -27,6 +28,7 @@ class LoginController extends AbstractController
     }
 
     /**
+     * Se logout
      * @Route("/logout", name="app_logout")
      */
     public function logout(): void

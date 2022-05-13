@@ -15,6 +15,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 class RegistrationController extends AbstractController
 {
     /**
+     * Afficher formulaire de creation de compte
      * @Route("/{_locale}/register", name="app_register")
      */
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response

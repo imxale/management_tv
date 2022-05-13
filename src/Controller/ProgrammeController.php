@@ -17,6 +17,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class ProgrammeController extends AbstractController
 {
     /**
+     * Lister les programmes
      * @IsGranted("ROLE_USER")
      * @Route("/", name="app_programme_index", methods={"GET"})
      */
@@ -28,6 +29,7 @@ class ProgrammeController extends AbstractController
     }
 
     /**
+     * Ajouter un programme
      * @IsGranted("ROLE_EDITOR")
      * @Route("/new", name="app_programme_new", methods={"GET", "POST"})
      */
@@ -49,6 +51,7 @@ class ProgrammeController extends AbstractController
     }
 
     /**
+     * Afficher un programme
      * @IsGranted("ROLE_USER")
      * @Route("/{id}", name="app_programme_show", methods={"GET"})
      */
@@ -60,6 +63,7 @@ class ProgrammeController extends AbstractController
     }
 
     /**
+     * Modifier un programme
      * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}/edit", name="app_programme_edit", methods={"GET", "POST"})
      */
@@ -80,6 +84,7 @@ class ProgrammeController extends AbstractController
     }
 
     /**
+     * Supprimer un programme
      * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}", name="app_programme_delete", methods={"POST"})
      */

@@ -18,6 +18,7 @@ use Doctrine\Persistence\ManagerRegistry;
 class GenreController extends AbstractController
 {
     /**
+     * Lister les genres
      * @IsGranted("ROLE_USER")
      * @Route("/", name="app_genre_index", methods={"GET"})
      */
@@ -29,6 +30,7 @@ class GenreController extends AbstractController
     }
 
     /**
+     * Ajouter un nouveau genre
      * @IsGranted("ROLE_EDITOR")
      * @Route("/new", name="app_genre_new", methods={"GET", "POST"})
      */
@@ -56,6 +58,7 @@ class GenreController extends AbstractController
     }
 
     /**
+     * Afficher un genre
      * @IsGranted("ROLE_USER")
      * @Route("/{id}", name="app_genre_show", methods={"GET"})
      */
@@ -67,6 +70,7 @@ class GenreController extends AbstractController
     }
 
     /**
+     * Modifier un genre
      * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}/edit", name="app_genre_edit", methods={"GET", "POST"})
      */
@@ -87,6 +91,7 @@ class GenreController extends AbstractController
     }
 
     /**
+     * Supprimer un genre
      * @IsGranted("ROLE_EDITOR")
      * @Route("/{id}", name="app_genre_delete", methods={"POST"})
      */
